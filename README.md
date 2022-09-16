@@ -59,20 +59,21 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Lijst met je bevindingen die in de test naar voren kwamen:
 
   #### Screenreader
-  Hier korte omschrijving (met indien nodig afbeeldingen)
+  Met een screenreader is de webpagina erg onduidelijk te navigeren, je springt automatisch naar het hamburger menu op een bapaald moment en komt niet echt bij de content omdat de pagina een lange scroll pagina is.
 
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
-
+  Door de pagina goed semantisch in te delen zou het handiger kunnen zijn te navigeren, zo kan de gebruiker eerst kiezen voor de menu opties, dan de content. Aangezien de pagina een grote div soep is kan daar zeker verbetering in plaats vinden.
 
   #### Muis en Toetsenbord 
   Hier korte omschrijving (met indien nodig afbeeldingen)
+  Zonder muis of touchpad met sroll kom je nergens. Met tabben kom je na een paar tabjes in het (nog dichte) hamburger menu terecht, waarna de footer opeens boven aan de pagina komt te staan. De pagina scrollt niet mee met tabjes dus de content is niet te zien. Op de mobiele pagina kan ik wel door de content heen tabben omdat de er dan knoppen in de hoofdcontent staan.
 
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
-
+  De pagina niet opmaken uit divjes zou hier misschien mee kunnen helpen en zorgen dat de gebruiker kan tabben naar titels bij ieder kopje, na het kiezen voor de content van de pagina.
 
   #### Motoriek (shocks, elastiekjes)
   Hier korte omschrijving (met indien nodig afbeeldingen)
-
+  geen grote problemen sinds het vooral scrollen is.
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
 
 
