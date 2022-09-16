@@ -95,7 +95,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <img src="readme-images/Breakdown_1.jpg" width="375px" alt="breakdown van de Home pagina">
 
   ### dynamisch deel (bijv menu): 
-  <img src="readme-images/breakdown_2.jpg" width="375px" alt="breakdown van de Our Story pagina met video achtergrond die mee scrollt tot de foorter in beeld komt.">
+  <img src="readme-images/Breakdown_2.jpg" width="375px" alt="breakdown van de Our Story pagina met video achtergrond die mee scrollt tot de foorter in beeld komt.">
 
 </details>
 
