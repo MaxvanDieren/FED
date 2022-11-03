@@ -6,7 +6,7 @@
 :root{
     --whitespace: 1vw;
 }
-
+/* Achtergrond position fixed */
 
 /* Positioneer het kleinste ding - tekst en niet t plaatje plaatje alleen relative */
 
@@ -59,13 +59,25 @@ body.page1{
 /* HEADER */
 
 .page1 header{
-    z-index: 40;
-    position: absolute;
+    z-index: 99;
+    position: fixed;
     top: 1vh;
     left: 15vh;
+    width: 100%;
 }
 
-.page1 header nav ul{
+.page1 header nav{
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+
+
+.page1 header nav ul:last-of-type(){
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -78,19 +90,100 @@ body.page1{
     list-style: none;
 }
 
+.page1 header nav button{
+    position: absolute;
+    right: -5rem;
+    cursor: pointer;
+}
+
+
+.page1 .menuClose{
+    display: none;
+}
+
+
+.page1 header nav ul{
+    position: fixed;
+    transform: translateY(-100%); /*hide the menu above screen*/ 
+    transition: transform 0.2s; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background: #a82326;
+    color: white;
+    list-style: none;
+    padding-top: 4rem;
+}
+
+.page1 .showMenu{
+    transform: translateX(0);
+}
+
 .page1 header section{
     align-items: center;
     justify-content: center;
     display: flex;
-    /* position: sticky; */
-    /* top: 0.5vh; */
+    position: sticky; 
+    top: 0.5vh; 
+}
+
+/* .page1 header nav a:first-of-type{
+wil me logo alleen over de foto zichtbaar hebben! 
+clip-path vlgns mij niet de way
+} */
+
+
+/* ANIMATIE HAMBURGER MENU  - STREEPJES BUTTON*/
+body header nav ul:first-of-type li button{
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
     
 }
 
-.page1 header section a img{
+body header nav ul:first-of-type li button span{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    width: 1.2em;
+    height: .2em;
+    background-color: white;
+    transition-duration: .5s;
+}
+
+body header nav ul:first-of-type li button span:nth-of-type(1){
+    transform: translateY(-.4em);
+}
+
+body header nav ul:first-of-type li button span:nth-of-type(2){
+    /* staat goed */
+}
+
+body header nav ul:first-of-type li button span:nth-of-type(3){
+    transform: translateY(.4em);
+}
+
+/* BUTTON MET CLASS menuOpen */
+body header nav ul:first-of-type li button.menuOpen span:nth-of-type(1){
+    transform: rotate(45deg) scaleX(1.25);
+}
+
+body header nav ul:first-of-type li button.menuOpen span:nth-of-type(2){
+    opacity: 0;
+}
+
+body header nav ul:first-of-type li button.menuOpen span:nth-of-type(3){
+    transform: rotate(-45deg) scaleX(1.25);
+}
+
+/* Eind menu stijl */
+
+.page1 header a img{
     height: 44px;
-    width: auto;
-    margin: 5% 1% 1%;
+    width: 100%;
+    margin: 5% -33% 1%; /*Niet responsive, krakkemikkig oplossing lijkt me*/
+    position: fixed;
 }
 
 .page1 header nav ul a{
@@ -98,40 +191,6 @@ body.page1{
     color: #280a0b;
 }
 
-
-/* BURGIR */
-
-.page1 header nav button{
-    position: fixed;
-    z-index: 100;
-    top: 1rem;
-    right: 1rem;
-    padding: 4px;
-    cursor: pointer;
-}
-
-.page1 .closeIcon{
-    display: none;
-}
-
-.page1 header nav ul{
-    position: fixed;
-    transform: translateY(-100%);
-    transition: transform 0.2s;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 99;
-    background: #a82326;
-    color: white;
-    list-style: none;
-    padding-top: 4rem;
-}
-
-.showMenu{
-    transform: translateY(0);
-}
 
 /* MAIN*/
 
@@ -175,16 +234,24 @@ body.page1{
     
 }
 
-.page1 main section article:first-child{
+/* .page1 main section article:first-child{ */
     /* width: 100%;
     padding: 5%; */
     /* position: relative;   */
-    /* top: -1vw;     */
+    /* top: -1vw; }    */
+
+
+.page1 main section article:first-of-type{
+    background-image: url("../images/Menu_home_vliegtuig.jpg");
+    background-attachment: fixed;
+    background-size: left -5vw top -3vh;
+    background-size: 120%;
+    height: 100vh;
+    position: relative;
 }
 
 .page1 main section article img{
-    
-    position: relative;
+    /* position: relative; */
     left: -5vw;
     width: 120%;
     top: -3vh;
@@ -201,7 +268,7 @@ body.page1{
     width: 100%;
     font-size: calc(21.02326px + 8.43023vw);
     position: relative;
-    top: -63vw;
+    top: 169vw;
     left: 3vw;
 }
 
@@ -209,7 +276,7 @@ body.page1{
     background-color: #fff8ed;
     width: 100%;
     position: relative;
-    top: -66.3vw;
+    top: -0.3vw;
 }
 .page1 main section article:nth-child(2) h2{
     padding: 0 3%;
@@ -241,8 +308,9 @@ body.page1{
 .page1 footer{
     background-color: brown;
     /* position: fixed; */
-    /* left: 0;
-    bottom: 0; */
+    height: 100%;
+    left: 0;
+    bottom: 0;
     text-align: center;
 }
 
@@ -268,7 +336,7 @@ body.page1{
 }
 
 
-/* PAGE 2 */
+/* PAGE 2, section op de eerste page - met javascript zodat t lijkt dat je door scrollt naar de volgende page*/
 
 .page2 * {
     box-sizing: border-box;
