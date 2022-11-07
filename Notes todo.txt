@@ -1,0 +1,9 @@
+FED todo:
+Index - hamburger menu 
+Our Story - video achtergrond youtube
+
+
+Van vorige jaar:
+styling toepassen twee nieuwe articles
+img en z-index checkem 
+fixed footer aan onderkant pagina blokt nu alles.

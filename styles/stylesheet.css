@@ -1,11 +1,14 @@
 /* CSS Document */
-*, *::after, *::before {
-    box-sizing:border-box;  
-  }
- 
-:root{
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
     --whitespace: 1vw;
 }
+
 /* Achtergrond position fixed */
 
 /* Positioneer het kleinste ding - tekst en niet t plaatje plaatje alleen relative */
@@ -23,13 +26,13 @@
 @font-face {
     font-family: "Simplon Mono";
     src: local("Simplon Mono Medium Regular"), url("../images/fonts/Simplon-mono/@font-face/35480b5356193cadbe34f8be49900124.woff2") format("woff2"),
-    url("../images/fonts/Simplon-mono/@font-face/35480b5356193cadbe34f8be49900124.woff") format("woff"),
-    url("../images/fonts/Simplon-mono/@font-face/35480b5356193cadbe34f8be49900124.ttf") format("truetype");
+        url("../images/fonts/Simplon-mono/@font-face/35480b5356193cadbe34f8be49900124.woff") format("woff"),
+        url("../images/fonts/Simplon-mono/@font-face/35480b5356193cadbe34f8be49900124.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
 
-@font-face{
+@font-face {
     font-family: "Vanitas Regular";
     src: local("Vanitas Regular"),
         url("../images/fonts/Vanitas/Vanitas Regular.ttf") format("truetype");
@@ -42,7 +45,7 @@
 /* PAGE 1 */
 
 
-body.page1{
+body.page1 {
     background-color: bisque;
     text-align: left;
     font-family: "Neuzeit Grotesk", sans-serif;
@@ -58,7 +61,7 @@ body.page1{
 
 /* HEADER */
 
-.page1 header{
+.page1 header {
     z-index: 99;
     position: fixed;
     top: 1vh;
@@ -66,67 +69,20 @@ body.page1{
     width: 100%;
 }
 
-.page1 header nav{
+.page1 header nav ul {
     position: fixed;
-    z-index: 99;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-}
-
-
-
-.page1 header nav ul:last-of-type(){
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-content:center;
-    margin: 1vh 0vh 0vh 0vh;
-}
-
-.page1 header nav li{
-    /* display: block; */
-    list-style: none;
-}
-
-.page1 header nav button{
-    position: absolute;
-    right: -5rem;
-    cursor: pointer;
-}
-
-
-.page1 .menuClose{
-    display: none;
-}
-
-
-.page1 header nav ul{
-    position: fixed;
-    transform: translateY(-100%); /*hide the menu above screen*/ 
-    transition: transform 0.2s; 
+    transform: translateY(-100%);
+    /*hide the menu above screen*/
+    transition: transform 0.2s;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 0;
-    background: #a82326;
+    background: #280a0b;
     color: white;
-    list-style: none;
+    /* list-style: none; */
     padding-top: 4rem;
-}
-
-.page1 .showMenu{
-    transform: translateX(0);
-}
-
-.page1 header section{
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    position: sticky; 
-    top: 0.5vh; 
 }
 
 /* .page1 header nav a:first-of-type{
@@ -135,79 +91,164 @@ clip-path vlgns mij niet de way
 } */
 
 
-/* ANIMATIE HAMBURGER MENU  - STREEPJES BUTTON*/
-body header nav ul:first-of-type li button{
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    
+/*HAMBURGER MENU*/
+.menuToggle {
+    display: block;
+    position: fixed;
+    top: 35px;
+    right: 35px;
+    z-index: 1;
+    user-select: none;
 }
 
-body header nav ul:first-of-type li button span{
-    grid-row-start: 1;
-    grid-column-start: 1;
-    width: 1.2em;
-    height: .2em;
-    background-color: white;
-    transition-duration: .5s;
+.menuToggle li { 
+    color: white;
+    transition: color 0.3s ease;
 }
 
-body header nav ul:first-of-type li button span:nth-of-type(1){
-    transform: translateY(-.4em);
+.menuToggle li:hover {
+    color: #a82326;
 }
 
-body header nav ul:first-of-type li button span:nth-of-type(2){
-    /* staat goed */
-}
+.menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
 
-body header nav ul:first-of-type li button span:nth-of-type(3){
-    transform: translateY(.4em);
-}
+    cursor: pointer;
 
-/* BUTTON MET CLASS menuOpen */
-body header nav ul:first-of-type li button.menuOpen span:nth-of-type(1){
-    transform: rotate(45deg) scaleX(1.25);
-}
-
-body header nav ul:first-of-type li button.menuOpen span:nth-of-type(2){
     opacity: 0;
+    /* hide this */
+    z-index: 101;
+    /* and place it over the hamburger */
+
+    -webkit-touch-callout: none;
 }
 
-body header nav ul:first-of-type li button.menuOpen span:nth-of-type(3){
-    transform: rotate(-45deg) scaleX(1.25);
+/* Span animatie */
+.menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #cdcdcd;
+    border-radius: 3px;
+
+    z-index: 99;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
 }
 
-/* Eind menu stijl */
+.menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
 
-.page1 header a img{
+.menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+.menuToggle input:checked~span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+
+}
+
+/*
+ * But let's hide the middle one.
+ */
+.menuToggle input:checked~span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+.menuToggle input:checked~span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * absolute position 
+ * display flex voor menu items
+ */
+.menu {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: -100px 0 0 0px;
+    padding: 50px 50px;
+    padding-top: 125px;
+
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+.menu li {
+    font-family: "Vanitas Regular", sans-serif;
+    padding: 40px 0;
+    font-size: 50px;
+}
+
+/* Krakkemikkige manier om menu in t midden te krijgen */
+.menu li:first-of-type {
+    padding-top: 150px;
+}
+/*
+ * Menu komt van boven want ik plaats hem in 
+ */
+.menuToggle input:checked~ul {
+    transform: none;
+}
+
+/* EINDE HAMBURGER MENU */
+
+.page1 header a img {
     height: 44px;
     width: 100%;
-    margin: 5% -33% 1%; /*Niet responsive, krakkemikkig oplossing lijkt me*/
+    margin: 5% -25% 1%;
+    /*Niet responsive, krakkemikkig oplossing lijkt me*/
     position: fixed;
 }
 
-.page1 header nav ul a{
-    font-family: "Vanitas Regular", sans-serif;
-    color: #280a0b;
-}
-
-
 /* MAIN*/
 
-.page1 h1{
+.page1 h1 {
     font-family: "Vanitas Regular", sans-serif;
     color: #280a0b;
 }
 
-.page1 h2, 
-.page1 figcaption{
+.page1 h2,
+.page1 figcaption {
     font-family: "Simplon Mono", sans-serif;
     color: #bbb0a1;
     font-size: 17px;
     text-transform: uppercase;
 }
 
-.page1 button{ 
+.page1 button {
     font-family: "Neuzeit Grotesk", sans-serif;
     border-radius: 5em;
     margin: 0 .5em .5em 0;
@@ -217,31 +258,31 @@ body header nav ul:first-of-type li button.menuOpen span:nth-of-type(3){
     color: #fff8ed;
     font-weight: 700;
     padding: 1em 2em;
-    transition: background-color .3s cubic-bezier(.215,.61,.355,1);
+    transition: background-color .3s cubic-bezier(.215, .61, .355, 1);
 }
 
-.page1 button:hover{
+.page1 button:hover {
     background-color: #a82326;
 }
 
 /* SPECIFIEKE STYLING */
 
-.page1 main section{
+.page1 main section {
     display: flex;
     flex-flow: column wrap;
     align-content: space-around;
     position: relative;
-    
+
 }
 
 /* .page1 main section article:first-child{ */
-    /* width: 100%;
+/* width: 100%;
     padding: 5%; */
-    /* position: relative;   */
-    /* top: -1vw; }    */
+/* position: relative;   */
+/* top: -1vw; }    */
 
 
-.page1 main section article:first-of-type{
+.page1 main section article:first-of-type {
     background-image: url("../images/Menu_home_vliegtuig.jpg");
     background-attachment: fixed;
     background-size: left -5vw top -3vh;
@@ -250,7 +291,7 @@ body header nav ul:first-of-type li button.menuOpen span:nth-of-type(3){
     position: relative;
 }
 
-.page1 main section article img{
+.page1 main section article img {
     /* position: relative; */
     left: -5vw;
     width: 120%;
@@ -261,7 +302,7 @@ body header nav ul:first-of-type li button.menuOpen span:nth-of-type(3){
 
 
 
-.page1 main section article:first-child h1{
+.page1 main section article:first-child h1 {
     color: #fff8ed;
     box-sizing: border-box;
     bottom: 0;
@@ -272,16 +313,18 @@ body header nav ul:first-of-type li button.menuOpen span:nth-of-type(3){
     left: 3vw;
 }
 
-.page1 main section article:nth-child(2){
+.page1 main section article:nth-child(2) {
     background-color: #fff8ed;
     width: 100%;
     position: relative;
     top: -0.3vw;
 }
-.page1 main section article:nth-child(2) h2{
+
+.page1 main section article:nth-child(2) h2 {
     padding: 0 3%;
 }
-.page1 main section article:nth-child(2) p{
+
+.page1 main section article:nth-child(2) p {
     color: #a82326;
     font-family: "Vanitas Regular", sans-serif;
     font-size: calc(27.03876px + 1.55039vw);
@@ -289,15 +332,15 @@ body header nav ul:first-of-type li button.menuOpen span:nth-of-type(3){
     padding: 0 3%;
 }
 
-.page1 main section article:nth-child(4) blockquote{
+.page1 main section article:nth-child(4) blockquote {
     color: #a82326;
     font-family: "Vanitas Regular", sans-serif;
     font-size: calc(27.03876px + 1.55039vw);
     line-height: 1.2;
-    
+
 }
 
-.page1 main section article:nth-child(3){
+.page1 main section article:nth-child(3) {
     background-color: #fff8ed;
     padding: 0 3%;
     /* position: relative; */
@@ -305,7 +348,7 @@ body header nav ul:first-of-type li button.menuOpen span:nth-of-type(3){
 
 /* FOOTER */
 
-.page1 footer{
+.page1 footer {
     background-color: brown;
     /* position: fixed; */
     height: 100%;
@@ -314,7 +357,7 @@ body header nav ul:first-of-type li button.menuOpen span:nth-of-type(3){
     text-align: center;
 }
 
-.page1 footer ul{
+.page1 footer ul {
     margin: 10%;
     padding: 10%;
     display: flex;
@@ -322,16 +365,16 @@ body header nav ul:first-of-type li button.menuOpen span:nth-of-type(3){
     justify-content: space-around;
     list-style: none;
     align-content: center;
-    
+
 }
 
-.page1 footer nav li{
+.page1 footer nav li {
     padding: 40vh;
 }
 
-.page1 footer nav li:nth-child(1), 
+.page1 footer nav li:nth-child(1),
 .page1 footer nav li:nth-child(2),
-.page1 footer nav li:nth-child(7){
+.page1 footer nav li:nth-child(7) {
     width: 100%;
 }
 
@@ -344,7 +387,7 @@ body header nav ul:first-of-type li button.menuOpen span:nth-of-type(3){
     padding: 0;
 }
 
-body.page2 section{
+body.page2 section {
     position: absolute;
     right: 0;
     width: 100%;
@@ -358,11 +401,11 @@ body.page2 section{
     z-index: 2;
 }
 
-body.page2 section.active{
+body.page2 section.active {
     right: 300px;
 }
 
-body.page2 nav{
+body.page2 nav {
     display: none;
 }
 
@@ -378,13 +421,13 @@ body.page2 section header {
     justify-content: space-between;
 }
 
-body.page2 section header img{
+body.page2 section header img {
     height: 44px;
     width: auto;
     margin: 5% 1% 1%;
 }
 
-body.page2 section header div{
+body.page2 section header div {
     position: relative;
     width: 60px;
     height: 60px;
@@ -393,16 +436,16 @@ body.page2 section header div{
     background-size: 30px;
     background-position: center;
     cursor: pointer;
-} 
+}
 
-body.page2 section header div.active{
+body.page2 section header div.active {
     background: url('../images/close.png');
     background-repeat: no-repeat;
     background-size: 25px;
     background-position: center;
 }
 
-body.page2 nav{
+body.page2 nav {
     position: absolute;
     top: 0;
     right: 0;
@@ -413,12 +456,12 @@ body.page2 nav{
     justify-content: center;
 }
 
-body.page2 nav ul{
+body.page2 nav ul {
     position: relative;
     list-style: none;
 }
 
-body.page2 nav ul li{
+body.page2 nav ul li {
     font-family: "Vanitas Regular", sans-serif;
     font-size: calc(27px + 1.6vw);
     margin: 50px 0;
@@ -426,12 +469,12 @@ body.page2 nav ul li{
     text-decoration: none;
 }
 
-body.page2 nav ul li:hover{
+body.page2 nav ul li:hover {
     color: #280a0b;
 }
 
 
-body.page2 section video{
+body.page2 section video {
     position: absolute;
     top: 0;
     left: 0;
@@ -441,7 +484,7 @@ body.page2 section video{
     opacity: 0.8;
 }
 
-body.page2 section div{
+body.page2 section div {
     position: absolute;
     top: 0;
     left: 0;
@@ -451,7 +494,7 @@ body.page2 section div{
     mix-blend-mode: overlay;
 }
 
-body.page2 section article{
+body.page2 section article {
     position: relative;
     z-index: 10;
     margin-top: 300px;
@@ -460,20 +503,19 @@ body.page2 section article{
     flex-direction: column;
 }
 
-body.page2 section article h1{
+body.page2 section article h1 {
     font-size: calc(21px + 8.5vw);
     font-family: "Vanitas Regular", sans-serif;
-    
-    
+
+
 }
 
-body.page2 section article p{
+body.page2 section article p {
     font-size: calc(27px + 1.6vw);
     font-family: "Vanitas Regular", sans-serif;
     color: #fff8ed;
     margin: 50px 0;
     line-height: 1.2;
     text-align: center;
-    
-}
 
+}
