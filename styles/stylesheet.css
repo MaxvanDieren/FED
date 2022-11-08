@@ -40,6 +40,10 @@
     font-style: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* KEYFRAMES */
 
 /* PAGE 1 */
@@ -61,12 +65,24 @@ body.page1 {
 
 /* HEADER */
 
-.page1 header {
+header nav {
     z-index: 99;
     position: fixed;
-    top: 1vh;
-    left: 15vh;
+    
+    height: 4rem;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav a {
+    width: 30rem;
+}
+
+nav figure {
+    height: 3rem;
 }
 
 .page1 header nav ul {
@@ -116,7 +132,7 @@ clip-path vlgns mij niet de way
     height: 32px;
     position: absolute;
     top: -7px;
-    left: -5px;
+    right: 2rem;
 
     cursor: pointer;
 
@@ -135,6 +151,7 @@ clip-path vlgns mij niet de way
     height: 4px;
     margin-bottom: 5px;
     position: relative;
+    right: 2rem;
 
     background: #cdcdcd;
     border-radius: 3px;
@@ -189,6 +206,7 @@ clip-path vlgns mij niet de way
     position: absolute;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     width: 100%;
     margin: -100px 0 0 0px;
@@ -227,11 +245,13 @@ clip-path vlgns mij niet de way
 
 .page1 header a img {
     height: 44px;
-    width: 100%;
-    margin: 5% -25% 1%;
+    width: 30%;
+    margin: 5% 5% 5% 17%;;
     /*Niet responsive, krakkemikkig oplossing lijkt me*/
     position: fixed;
+
 }
+
 
 /* MAIN*/
 
@@ -246,6 +266,12 @@ clip-path vlgns mij niet de way
     color: #bbb0a1;
     font-size: 17px;
     text-transform: uppercase;
+    padding: 0 0 1rem 0;
+    /* text-align: center; */
+}
+
+.page1 figcaption {
+    text-align: center;
 }
 
 .page1 button {
@@ -265,6 +291,10 @@ clip-path vlgns mij niet de way
     background-color: #a82326;
 }
 
+
+
+
+
 /* SPECIFIEKE STYLING */
 
 .page1 main section {
@@ -272,6 +302,7 @@ clip-path vlgns mij niet de way
     flex-flow: column wrap;
     align-content: space-around;
     position: relative;
+   
 
 }
 
@@ -286,7 +317,9 @@ clip-path vlgns mij niet de way
     background-image: url("../images/Menu_home_vliegtuig.jpg");
     background-attachment: fixed;
     background-size: left -5vw top -3vh;
-    background-size: 120%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     height: 100vh;
     position: relative;
 }
@@ -299,8 +332,25 @@ clip-path vlgns mij niet de way
     height: auto;
     overflow-x: hidden;
 }
+.page1 main section article:nth-child(4) figure {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: right;
+}
 
+.page1 main section article:nth-child(4) img:first-of-type {
+    width: 60%;
+    height: auto;
+    /* margin: 0 0 0 10rem; responsive? */
+}
 
+.page1 main section article:nth-child(4) img:last-of-type {
+    width: 60%;
+    height: auto;
+    align-self: flex-end; 
+    /* figure in flex box - align self flex end om rechts te krijgen */
+}
 
 .page1 main section article:first-child h1 {
     color: #fff8ed;
@@ -309,7 +359,7 @@ clip-path vlgns mij niet de way
     width: 100%;
     font-size: calc(21.02326px + 8.43023vw);
     position: relative;
-    top: 169vw;
+    top: 100vw;
     left: 3vw;
 }
 
@@ -337,8 +387,10 @@ clip-path vlgns mij niet de way
     font-family: "Vanitas Regular", sans-serif;
     font-size: calc(27.03876px + 1.55039vw);
     line-height: 1.2;
-
+    text-align: center;
+    
 }
+
 
 .page1 main section article:nth-child(3) {
     background-color: #fff8ed;
@@ -378,6 +430,38 @@ clip-path vlgns mij niet de way
     width: 100%;
 }
 
+/* BACK TO TOP BUTTON */
+.to-top {
+    background: white;
+    position: fixed;
+    bottom: 12px;
+    right: 32px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .1px;
+    font-size: 25px;
+    color: darkblue;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+/* .to-top p {
+    font-size: 12px;
+} */
+
+.to-top.active{
+    bottom: 12px;
+    pointer-events: auto;
+    opacity: 1;
+}
 
 /* PAGE 2, section op de eerste page - met javascript zodat t lijkt dat je door scrollt naar de volgende page*/
 
