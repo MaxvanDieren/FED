@@ -109,7 +109,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 1e voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  Ik had moeite met het indelen van de sections, de h1 laten verdwijnen bij het omhoog scrollen. 
+  Het laten lijken dat de tweede section over de eerste afbeelding heen kwam vond ik lastig.
+  
+  Ook miste ik een hamburger menu waar ik mee aan het werk was.
+
 
 
   ### Agenda voor meeting
@@ -125,10 +129,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Ik heb met de student assistenten gezeten over de de sections. 
+  Ik had erg in mijn hoofd om alles met verschillende positions te doen maar dit werd onoverzichtelijk.
 
 </details>
 
@@ -271,8 +273,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 
-  1. bron 1
-  2. bron 2
+  1. https://www.youtube.com/watch?v=SJVCvnKM_lI uitwerking van de back to top knop. aangepast om ook titel en logo te laten verdwijnen.
+  2. https://codepen.io/erikterwan/pen/EVzeRP aangepast om fullscreen te zijn, van boven te komen en rechts boven aan te staan(icoon).
   3. ...
 
 </details>

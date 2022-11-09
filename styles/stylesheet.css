@@ -40,7 +40,8 @@
     font-style: normal;
 }
 
-html {
+html,
+body {
     scroll-behavior: smooth;
 }
 
@@ -49,14 +50,12 @@ html {
 /* PAGE 1 */
 
 
-body.page1 {
-    background-color: bisque;
+body {
+    background-color: #fff8ed;
     text-align: left;
     font-family: "Neuzeit Grotesk", sans-serif;
     -webkit-font-smoothing: antialiased;
-    /* -webkit-overflow-scrolling: touch; */
     margin: 0;
-    /* padding: var(--whitespace); */
     height: 500vw;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -68,8 +67,9 @@ body.page1 {
 header nav {
     z-index: 99;
     position: fixed;
-    
-    height: 4rem;
+    top: 0;
+    left: 0;
+    height: 6.5rem;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -78,14 +78,16 @@ header nav {
 }
 
 header nav a {
-    width: 30rem;
+    width: 100%;
+    text-decoration: none;
 }
 
 nav figure {
     height: 3rem;
 }
 
-.page1 header nav ul {
+.page1 header nav ul,
+.page2 header nav ul {
     position: fixed;
     transform: translateY(-100%);
     /*hide the menu above screen*/
@@ -97,17 +99,20 @@ nav figure {
     z-index: 0;
     background: #280a0b;
     color: white;
-    /* list-style: none; */
     padding-top: 4rem;
+
 }
 
-/* .page1 header nav a:first-of-type{
-wil me logo alleen over de foto zichtbaar hebben! 
-clip-path vlgns mij niet de way
-} */
+.page1 header nav figure,
+.page2 header nav figure {
+    transition: opacity 1s;
+    display: flex;
+    justify-content: space-around;
+}
 
 
 /*HAMBURGER MENU*/
+
 .menuToggle {
     display: block;
     position: fixed;
@@ -117,22 +122,24 @@ clip-path vlgns mij niet de way
     user-select: none;
 }
 
-.menuToggle li { 
+.menuToggle li a {
     color: white;
     transition: color 0.3s ease;
+
 }
 
-.menuToggle li:hover {
+.menuToggle li a:hover {
     color: #a82326;
+    cursor: pointer;
 }
 
 .menuToggle input {
     display: block;
-    width: 40px;
-    height: 32px;
+    width: 60px;
+    height: 50px;
     position: absolute;
     top: -7px;
-    right: 2rem;
+    right: 0;
 
     cursor: pointer;
 
@@ -151,9 +158,9 @@ clip-path vlgns mij niet de way
     height: 4px;
     margin-bottom: 5px;
     position: relative;
-    right: 2rem;
+    right: .5rem;
 
-    background: #cdcdcd;
+    background: white;
     border-radius: 3px;
 
     z-index: 99;
@@ -228,12 +235,14 @@ clip-path vlgns mij niet de way
     font-family: "Vanitas Regular", sans-serif;
     padding: 40px 0;
     font-size: 50px;
+    text-align: center;
 }
 
 /* Krakkemikkige manier om menu in t midden te krijgen */
 .menu li:first-of-type {
     padding-top: 150px;
 }
+
 /*
  * Menu komt van boven want ik plaats hem in 
  */
@@ -243,48 +252,64 @@ clip-path vlgns mij niet de way
 
 /* EINDE HAMBURGER MENU */
 
-.page1 header a img {
-    height: 44px;
-    width: 30%;
-    margin: 5% 5% 5% 17%;;
-    /*Niet responsive, krakkemikkig oplossing lijkt me*/
-    position: fixed;
-
-}
-
-
 /* MAIN*/
 
 .page1 h1 {
     font-family: "Vanitas Regular", sans-serif;
     color: #280a0b;
+    transition: opacity 1s;
 }
 
-.page1 h2,
-.page1 figcaption {
+.fade {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.page1 h2 {
     font-family: "Simplon Mono", sans-serif;
     color: #bbb0a1;
-    font-size: 17px;
+    font-size: 13px;
     text-transform: uppercase;
-    padding: 0 0 1rem 0;
-    /* text-align: center; */
+    padding: 1rem 0 0 0;
+    margin-top: 20px;
+    font-weight: normal;
+    
+}
+
+.page1 h3 {
+    font-family: "Vanitas Regular", sans-serif;
+    font-size: calc(27.03876px + 1.55039vw);
+    color: black;
+    font-weight: normal;
+
 }
 
 .page1 figcaption {
     text-align: center;
+    font-family: "Simplon Mono", sans-serif;
+    color: #bbb0a1;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 0 0 2rem 0;
+}
+
+.page1 p {
+    font-family: "Neuzeit Grotesk", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
 }
 
 .page1 button {
     font-family: "Neuzeit Grotesk", sans-serif;
     border-radius: 5em;
-    margin: 0 .5em .5em 0;
-    padding: .5em;
+    margin: 0 .5em 2em 0;
     background-color: #280a0b;
     border: none;
     color: #fff8ed;
     font-weight: 700;
     padding: 1em 2em;
     transition: background-color .3s cubic-bezier(.215, .61, .355, 1);
+    cursor: pointer;
 }
 
 .page1 button:hover {
@@ -297,26 +322,27 @@ clip-path vlgns mij niet de way
 
 /* SPECIFIEKE STYLING */
 
+
+.page1 main section article:nth-child(2) p {
+    margin-top: 0;
+    margin-bottom: 25%;
+}
+
 .page1 main section {
     display: flex;
     flex-flow: column wrap;
     align-content: space-around;
     position: relative;
-   
-
+    height: 100%;
+    width: 100%;
 }
 
-/* .page1 main section article:first-child{ */
-/* width: 100%;
-    padding: 5%; */
-/* position: relative;   */
-/* top: -1vw; }    */
+
 
 
 .page1 main section article:first-of-type {
     background-image: url("../images/Menu_home_vliegtuig.jpg");
     background-attachment: fixed;
-    background-size: left -5vw top -3vh;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -327,13 +353,14 @@ clip-path vlgns mij niet de way
 .page1 main section article img {
     /* position: relative; */
     left: -5vw;
-    width: 120%;
+    width: 100%;
     top: -3vh;
     height: auto;
     overflow-x: hidden;
 }
+
 .page1 main section article:nth-child(4) figure {
-    display:flex;
+    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: right;
@@ -342,13 +369,14 @@ clip-path vlgns mij niet de way
 .page1 main section article:nth-child(4) img:first-of-type {
     width: 60%;
     height: auto;
-    /* margin: 0 0 0 10rem; responsive? */
+    max-height: 20%;
+    
 }
 
 .page1 main section article:nth-child(4) img:last-of-type {
     width: 60%;
     height: auto;
-    align-self: flex-end; 
+    align-self: flex-end;
     /* figure in flex box - align self flex end om rechts te krijgen */
 }
 
@@ -356,22 +384,25 @@ clip-path vlgns mij niet de way
     color: #fff8ed;
     box-sizing: border-box;
     bottom: 0;
-    width: 100%;
+    width: calc(100% - 3vw);
+    /*ruimte geven aan de linker kant maar altijd binnen 100 */
     font-size: calc(21.02326px + 8.43023vw);
-    position: relative;
-    top: 100vw;
+    position: absolute;
+    bottom: 0;
     left: 3vw;
+    margin: 0 0 1rem 0;
 }
 
 .page1 main section article:nth-child(2) {
     background-color: #fff8ed;
     width: 100%;
+
     position: relative;
     top: -0.3vw;
 }
 
 .page1 main section article:nth-child(2) h2 {
-    padding: 0 3%;
+    padding: 15% 3% 0;
 }
 
 .page1 main section article:nth-child(2) p {
@@ -388,46 +419,115 @@ clip-path vlgns mij niet de way
     font-size: calc(27.03876px + 1.55039vw);
     line-height: 1.2;
     text-align: center;
-    
-}
 
+}
 
 .page1 main section article:nth-child(3) {
+    margin-bottom: 10%;
+}
+
+.page1 main section article:nth-child(3) h2,
+.page1 main section article:nth-child(3) h3,
+.page1 main section article:nth-child(3) p {
     background-color: #fff8ed;
     padding: 0 3%;
-    /* position: relative; */
+    margin: 3% 0;
 }
+
+.page1 main section article:nth-child(3) button {
+    margin: 0 3%;
+}
+
+.page1 main section article:nth-child(5) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 3%;
+    overflow-x: hidden;
+    margin-bottom: 10%;
+}
+
+.page1 main section article:nth-child(5) h3 {
+    margin: 0 1rem 1rem 1rem;
+    text-align: center;
+}
+
+.page1 main section article:nth-child(6) {
+    margin-bottom: 10%;
+}
+
+.page1 main section article:nth-child(6) h2,
+.page1 main section article:nth-child(6) h3,
+.page1 main section article:nth-child(6) p {
+    padding: 0 3%;
+
+}
+
+.page1 main section article:nth-child(6) button {
+    margin: 0 3%;
+}
+
+/* .page1 main section article:nth-child(7) {
+    padding: 0 3%;
+    
+} */
+
+/* .page1 main section article:nth-child(7) div {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0 1rem 0;
+}
+
+.page1 main section article:nth-child(7) div figure {
+    width: 33.33%;
+    
+    text-align: center;
+    padding: 0 1rem 0 1rem;
+} */
+
+
 
 /* FOOTER */
 
 .page1 footer {
-    background-color: brown;
+    background-color: #280a0b;
     /* position: fixed; */
-    height: 100%;
+    min-height: 50vh;
+    /* houd footer niet te groot */
     left: 0;
     bottom: 0;
     text-align: center;
 }
 
-.page1 footer ul {
+.page1 footer ul,
+.page2 footer ul {
     margin: 10%;
     padding: 10%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     justify-content: space-around;
     list-style: none;
-    align-content: center;
+    /* align-content: center; */
+    gap: 50%;
 
 }
 
-.page1 footer nav li {
-    padding: 40vh;
+.page1 footer ul li,
+.page2 footer ul li {
+    padding: 3rem 0 0 0;
+    color: #FAF9F6;
+    font-family: "Vanitas Regular", sans-serif;
 }
 
-.page1 footer nav li:nth-child(1),
-.page1 footer nav li:nth-child(2),
-.page1 footer nav li:nth-child(7) {
-    width: 100%;
+.page1 footer ul li a,
+.page2 footer ul li a {
+    text-decoration: none;
+    color: #FAF9F6;
+}
+
+.page1 footer ul li a:hover,
+.page2 footer ul li a:hover {
+    color: #a82326;
 }
 
 /* BACK TO TOP BUTTON */
@@ -435,7 +535,7 @@ clip-path vlgns mij niet de way
     background: white;
     position: fixed;
     bottom: 12px;
-    right: 32px;
+    right: 1.5rem;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -445,7 +545,7 @@ clip-path vlgns mij niet de way
     justify-content: center;
     gap: .1px;
     font-size: 25px;
-    color: darkblue;
+    color: #a82326;
     text-decoration: none;
     opacity: 0;
     pointer-events: none;
@@ -453,153 +553,107 @@ clip-path vlgns mij niet de way
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-/* .to-top p {
-    font-size: 12px;
-} */
+.to-top:hover {
+    color: white;
+    background: skyblue;
+    box-shadow: #FFFFFF 0px 20px 30px -10px;
+}
 
-.to-top.active{
+
+
+.to-top.active {
     bottom: 12px;
     pointer-events: auto;
     opacity: 1;
 }
 
+
 /* PAGE 2, section op de eerste page - met javascript zodat t lijkt dat je door scrollt naar de volgende page*/
 
-.page2 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
-body.page2 section {
-    position: absolute;
-    right: 0;
-    width: 100%;
-    min-height: 100vh;
-    padding: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #111;
-    color: #fff8ed;
-    z-index: 2;
-}
-
-body.page2 section.active {
-    right: 300px;
-}
-
-body.page2 nav {
-    display: none;
-}
-
-body.page2 section header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 40px 100px;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-body.page2 section header img {
-    height: 44px;
-    width: auto;
-    margin: 5% 1% 1%;
-}
-
-body.page2 section header div {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    background: url('../images/menu.png');
-    background-repeat: no-repeat;
-    background-size: 30px;
-    background-position: center;
-    cursor: pointer;
-}
-
-body.page2 section header div.active {
-    background: url('../images/close.png');
-    background-repeat: no-repeat;
-    background-size: 25px;
-    background-position: center;
-}
-
-body.page2 nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-body.page2 nav ul {
-    position: relative;
-    list-style: none;
-}
-
-body.page2 nav ul li {
-    font-family: "Vanitas Regular", sans-serif;
-    font-size: calc(27px + 1.6vw);
-    margin: 50px 0;
-    color: #111;
-    text-decoration: none;
-}
-
-body.page2 nav ul li:hover {
-    color: #280a0b;
-}
-
-
-body.page2 section video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8;
-}
-
-body.page2 section div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #aee3fc;
-    mix-blend-mode: overlay;
-}
-
-body.page2 section article {
-    position: relative;
-    z-index: 10;
-    margin-top: 300px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-body.page2 section article h1 {
-    font-size: calc(21px + 8.5vw);
-    font-family: "Vanitas Regular", sans-serif;
-
+body.page2 {
+    height: 100vh;
 
 }
 
-body.page2 section article p {
-    font-size: calc(27px + 1.6vw);
-    font-family: "Vanitas Regular", sans-serif;
-    color: #fff8ed;
-    margin: 50px 0;
-    line-height: 1.2;
+body.page2 article {
+    padding: 10% 15% 50%;
+}
+
+
+.page2 article p {
     text-align: center;
+    font-family: "Vanitas Regular", sans-serif;
+    line-height: 1.2;
+    color: #fff8ed;
+    text-shadow: 0 0 0.2em rgb(66 122 161 / 20%);
+}
 
+.page2 article h1 {
+    text-align: center;
+    font-family: "Vanitas Regular", sans-serif;
+    line-height: 1.2;
+    color: #fff8ed;
+    text-shadow: 0 0 0.2em rgb(66 122 161 / 20%);
+    font-size: calc(21.02326px + 8.43023vw);
+    transition: opacity 1s;
+}
+
+
+
+
+body.page2 article p {
+    font-family: "Vanitas Regular", sans-serif;
+    font-weight: normal;
+    font-size: calc(27.03876px + 1.55039vw);
+    background-color: none;
+}
+
+
+
+.page2 video {
+    height: 100%;
+    width: 100vw;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+}
+
+.page2 main {
+    position: relative;
+}
+
+.page2 main div {
+    position: absolute;
+    background: red;
+    width: 100%;
+    height: 20%;
+    opacity: 0;
+}
+
+/* text fade met gradient */
+.container {
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    transition: background 0.5s ease-out;
+}
+
+/* FOOTER PAGE2 */
+.page2 footer {
+    background-color: #280a0b;
+
+    
+    width: 100vw;
+    
+    bottom: 0;
+    text-align: center;
+    padding: 2rem 2rem;
 }
