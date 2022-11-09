@@ -220,7 +220,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Dit was lastig/Is niet gelukt:
   Korte omschrijving met plaatjes
 
-  <img src="readme-images/nietgeluktscreen.jpg" width="375px" alt="Het lukte me niet om doormiddel van een gradient de tekst weg te laten vagen van de our story pagina zonder dat de scroll op de pagina vreemd ging werken.">
+  <img src="readme-images/nietgelukscreen.jpg" width="375px" alt="Het lukte me niet om doormiddel van een gradient de tekst weg te laten vagen van de our story pagina zonder dat de scroll op de pagina vreemd ging werken.">
 </details>
 
 
