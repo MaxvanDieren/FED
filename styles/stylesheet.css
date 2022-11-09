@@ -649,10 +649,7 @@ body.page2 article p {
 /* FOOTER PAGE2 */
 .page2 footer {
     background-color: #280a0b;
-
-    
     width: 100vw;
-    
     bottom: 0;
     text-align: center;
     padding: 2rem 2rem;

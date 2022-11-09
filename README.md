@@ -115,20 +115,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Ook miste ik een hamburger menu waar ik mee aan het werk was.
 
 
-
-  ### Agenda voor meeting
-  samen met je groepje opstellen
-
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
-
-
   ### Verslag van meeting
-  hier na afloop snel de uitkomsten van de meeting vastleggen
-
   - Ik heb met de student assistenten gezeten over de de sections. 
   Ik had erg in mijn hoofd om alles met verschillende positions te doen maar dit werd onoverzichtelijk.
 
@@ -180,27 +167,19 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
 
   #### Screenreader
-  Hier korte omschrijving (met indien nodig afbeeldingen)
-
-  Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+ Door alles in te delen in sections en articles is de pagina met een screenreader toegankelijker.
 
 
   #### Muis en Toetsenbord 
-  Hier korte omschrijving (met indien nodig afbeeldingen)
-
-  Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  Omdat ik op de Our story pagina geen knoppen heb naast de footer springt de tab daar gelijk naartoe. Het hambuger menu is niet lekker aan te spreken via tabben.
 
 
   #### Motoriek (shocks, elastiekjes)
-  Hier korte omschrijving (met indien nodig afbeeldingen)
-
-  Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  Doordat ik vooral scroll functionaliteiten heb op de pagina is het met motorieke handelingen ook goed te navigeren.
 
 
   #### Visueel (brillen, contrast, kleurenblind, dark/light). 
-  Hier korte omschrijving (met indien nodig afbeeldingen)
-
-  Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  De pagina was goed te navigeren met de brillen op.
 
 </details>
 
@@ -211,29 +190,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Voortgang 3 (week 4)
 
 <details>
-  <summary>uitwerken voor 3e voortgang</summary>
+  <summary>Het derde voortgangsgesprek heb ik met Laurens gedaan. We gekeken het toevoegen van een favicon en naar het wat meer responsive maken van mijn webpaginas. Verder had ik wat vragen over witruimte die ik niet wegkreeg bij de mobiele weergave van de paginas. </summary>
 
-  ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
-
-
-  ### Agenda voor meeting
-  samen met je groepje opstellen
-
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
-
-
-  ### Verslag van meeting
-  hier na afloop snel de uitkomsten van de meeting vastleggen
-
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  ### Stand van zaken & verslag
+  De witruimte was vrij makkelijk op te lossen door de stijling van een h1 aan te passen, dit heb ik gedaan doormiddel van een calc functie.
 
 </details>
 
@@ -247,19 +207,20 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor eindgesprek</summary>
 
   ### Je uitkomst - karakteristiek screenshots:
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="uitomst opdracht 1">
+  <img src="readme-images/karakscreen1.jpg" width="375px" alt="pagina 1 home page">
+  <img src="readme-images/karakscreen2.jpg" width="375px" alt="hamburermenu">
 
 
   ### Dit ging goed/Heb ik geleerd: 
   Korte omschrijving met plaatjes
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+  <img src="readme-images/geleerdscreen.jpg" width="375px" alt="Hier is het me gelukt om een back to top button met javascript te maken.">
 
 
   ### Dit was lastig/Is niet gelukt:
   Korte omschrijving met plaatjes
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
+  <img src="readme-images/nietgeluktscreen.jpg" width="375px" alt="Het lukte me niet om doormiddel van een gradient de tekst weg te laten vagen van de our story pagina zonder dat de scroll op de pagina vreemd ging werken.">
 </details>
 
 
@@ -275,6 +236,6 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   1. https://www.youtube.com/watch?v=SJVCvnKM_lI uitwerking van de back to top knop. aangepast om ook titel en logo te laten verdwijnen.
   2. https://codepen.io/erikterwan/pen/EVzeRP aangepast om fullscreen te zijn, van boven te komen en rechts boven aan te staan(icoon).
-  3. ...
+  3. https://www.flyplatoon.com/our-story de verschillende afbeeldingen en video die ik van de site heb gehaald
 
 </details>
